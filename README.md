@@ -107,10 +107,29 @@ The app will be available at `http://localhost:5173`
 
 ---
 
+## 🧪 Testing
+
+Algo Assistant uses **Jest** with `ts-jest` for unit testing the core services.
+
+To execute tests:
+```bash
+# Run unit tests
+npm run test
+
+# Run tests with code coverage maps
+npm run test:coverage
+```
+
+For more details on configurations, see the **[Testing Documentation (docs/TESTING.md)](docs/TESTING.md)**.
+
+---
+
 ## 📁 Project Structure
 
 ```
 Algo-assistant/
+├── docs/
+│   └── TESTING.md         # Testing architecture & configurations
 ├── src/
 │   ├── components/        # React UI components
 │   │   ├── Chat.tsx       # Main chat interface
@@ -118,7 +137,8 @@ Algo-assistant/
 │   ├── services/          # Core business logic
 │   │   ├── aiService.ts       # Gemini API integration
 │   │   ├── contractGenerator.ts # Smart contract generation
-│   │   └── helpService.ts     # Help & documentation
+│   │   ├── helpService.ts     # Help & documentation
+│   │   └── helpService.test.ts # Unit tests for helpService
 │   ├── config/            # App configuration
 │   ├── templates.ts       # Contract templates
 │   ├── types/             # TypeScript type definitions
@@ -126,6 +146,7 @@ Algo-assistant/
 │   └── main.tsx           # Entry point
 ├── sandbox/               # Algorand sandbox configs
 ├── .env.example           # Environment template
+├── jest.config.cjs        # Jest test configuration
 ├── vite.config.ts         # Vite configuration
 ├── tailwind.config.js     # Tailwind configuration
 └── tsconfig.json          # TypeScript configuration
